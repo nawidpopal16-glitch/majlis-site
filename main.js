@@ -130,20 +130,22 @@
   });
 
   const occasionPhrase = {
-    'Wedding / Walima': 'wedding or walima',
-    'Nikkah': 'Nikkah',
-    'Engagement': 'engagement',
-    'Eid gathering': 'Eid gathering',
-    'Aqeeqah': 'Aqeeqah',
-    'Birthday': 'birthday',
-    'Corporate': 'corporate event',
+    'Wedding': 'your wedding',
+    'Engagement': 'your engagement',
+    'Formal dinner': 'your formal dinner',
+    'Bridal shower': 'a bridal shower',
+    'Henna night': 'a henna night',
+    'Birthday': 'a birthday',
+    'Religious or holiday gathering': 'your gathering',
+    'Memorial / celebration of life': 'a memorial gathering',
+    'Corporate': 'your corporate event',
   };
   const describe = data => {
     const parts = [];
     const event = occasionPhrase[data.get('event_type')];
     const guests = data.get('guests');
     const date = data.get('event_date');
-    if (event) parts.push(`your ${event}`);
+    if (event) parts.push(event);
     if (date) {
       const [y, m, d] = date.split('-').map(Number);
       parts.push('on ' + new Date(y, m - 1, d).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }));
@@ -238,6 +240,9 @@
     if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
   });
 
-  /* ── footer year ── */
-  $('#year').textContent = new Date().getFullYear();
+  /* ── footer year and "Now Booking" years, so they never go stale ── */
+  const thisYear = new Date().getFullYear();
+  $('#year').textContent = thisYear;
+  $('#bookYear').textContent = thisYear;
+  $('#bookYearNext').textContent = thisYear + 1;
 })();

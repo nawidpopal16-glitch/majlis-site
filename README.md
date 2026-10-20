@@ -30,7 +30,14 @@ didn't go through and points people to Instagram. It never shows a false
 
 ## Facts on the page
 
-Every fact comes from the demo: address, 200+ seated guests, 5★ Google,
-the three Google reviews, and @majlisuc. No phone number is listed because
-none could be confirmed. Add one in the contact section and the mobile action
-bar once the owner gives it.
+Confirmed by the owner (October 2026): 100+ seated guests, in-house catering
+(from the sister kitchen in the same plaza), a coffee, matcha and mocktail
+cart, and a preferred-vendor list (DJ, décor, fruit and sweets). The hall
+does not supply décor or a sound system, so the page doesn't claim them.
+The copy is written for every community and occasion.
+
+The "Now Booking" years and the footer year fill themselves in each year.
+
+Still to come from the owner: the business phone (for call and text
+buttons), the email that enquiries should go to, vendor names to list, and
+new photos to replace the current set.
