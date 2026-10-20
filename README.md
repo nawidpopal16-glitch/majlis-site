@@ -22,11 +22,14 @@ Open http://localhost:4400.
 
 ## Enquiry form
 
-The form uses Netlify Forms (`data-netlify="true"`), so submissions arrive
-in the Netlify dashboard once the folder is deployed to Netlify. On any host
-without a form handler, including the local preview, it says the enquiry
-didn't go through and points people to Instagram. It never shows a false
-"thank you". To host elsewhere, point the form's `action` at a real endpoint.
+Enquiries are emailed to MajilisUc@gmail.com through FormSubmit
+(formsubmit.co), which is free and needs no account. The very first
+submission sends an activation email to that inbox; nothing is delivered
+until the owner clicks "Activate Form" in it. After that, every enquiry
+arrives as an email, with reply-to set to the guest's address.
+
+If a send fails, the form says so, keeps what was typed, and offers the
+phone number. It never shows a false "thank you".
 
 ## Facts on the page
 
@@ -38,6 +41,7 @@ The copy is written for every community and occasion.
 
 The "Now Booking" years and the footer year fill themselves in each year.
 
-Still to come from the owner: the business phone (for call and text
-buttons), the email that enquiries should go to, vendor names to list, and
-new photos to replace the current set.
+Phone and text: (510) 508-0007.
+
+Still to come from the owner: vendor names to list, and new photos to
+replace the current set.

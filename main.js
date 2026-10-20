@@ -167,14 +167,17 @@
     submitBtn.classList.add('is-sending');
     $('.form-submit-text', submitBtn).textContent = 'Sending…';
     try {
-      const res = await fetch(form.getAttribute('action') || '/', {
+      // FormSubmit emails the enquiry to the hall; its /ajax/ endpoint answers in JSON
+      const name = data.get('name').trim();
+      const occasion = data.get('event_type');
+      data.set('_subject', `New enquiry${occasion ? ` (${occasion})` : ''} from ${name} — Majlis website`);
+      const res = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString(),
+        headers: { Accept: 'application/json' },
+        body: data,
       });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      // a plain static server answers the POST by echoing this page back; nothing was captured
-      if ((await res.text()).includes('id="enquiryForm"')) throw new Error('No form handler on this host');
+      const reply = await res.json().catch(() => null);
+      if (!res.ok || String(reply?.success) !== 'true') throw new Error(reply?.message || 'HTTP ' + res.status);
       const first = data.get('name').trim().split(/\s+/)[0];
       $('#successName').textContent = first ? `, ${first}` : '';
       $('#successSummary').textContent = describe(data);
@@ -183,7 +186,7 @@
       success.focus();
       success.scrollIntoView({ behavior: scrollBehavior, block: 'center' });
     } catch {
-      status.innerHTML = 'Sorry, your enquiry didn’t go through. Please try again, or message us on Instagram at <a href="https://www.instagram.com/majlisuc/" target="_blank" rel="noopener">@majlisuc</a>.';
+      status.innerHTML = 'Sorry, your enquiry didn’t go through. Please try again, or call or text us at <a href="tel:+15105080007">(510) 508-0007</a>.';
     } finally {
       submitBtn.disabled = false;
       submitBtn.classList.remove('is-sending');

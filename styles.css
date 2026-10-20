@@ -355,6 +355,7 @@ a { color: inherit; }
 .c-text span { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
 .c-link { margin-top: 0.3rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dark); text-decoration: none; }
 .c-link:hover { color: var(--charcoal); }
+.c-links { display: flex; flex-wrap: wrap; gap: 0 1.4rem; }
 
 .contact-card { background: var(--ivory); border: 1px solid var(--ivory-dark); border-top: 3px solid var(--gold); padding: 2.6rem; }
 .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
@@ -547,7 +548,7 @@ input[type="date"].form-input { min-height: 50px; line-height: 1.4; }
 
   .action-bar {
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
-    display: grid; grid-template-columns: 1fr 1.4fr; gap: 0.6rem;
+    display: grid; grid-template-columns: 1fr 1fr 1.6fr; gap: 0.5rem;
     padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom));
     background: rgba(26,22,19,0.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
     border-top: 1px solid rgba(220,192,140,0.18);
